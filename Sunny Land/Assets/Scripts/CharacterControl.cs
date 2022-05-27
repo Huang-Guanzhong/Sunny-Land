@@ -6,6 +6,7 @@ public class CharacterControl : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
+    public float jumpforce;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +22,27 @@ public class CharacterControl : MonoBehaviour
 
     void Movement() 
     {
-        float horizontalmove;
-        horizontalmove = Input.GetAxis("Horizontal");
+        float horizontalmove = Input.GetAxis("Horizontal");
+        float facedirection = Input.GetAxisRaw("Horizontal");
 
         if (horizontalmove != 0)
         {
-            rb.velocity = new Vector2(horizontalmove*speed, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+
+        }
+
+        if (facedirection != 0) 
+        {
+            transform.localScale = new Vector3(facedirection, 1, 1);
         
         }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+
+        }
+
     
     }
 
