@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator anim;
     public float speed;
     public float jumpforce;
 
@@ -25,10 +26,11 @@ public class CharacterControl : MonoBehaviour
         float horizontalmove = Input.GetAxis("Horizontal");
         float facedirection = Input.GetAxisRaw("Horizontal");
 
+        //chareacter movement
         if (horizontalmove != 0)
         {
             rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
-
+            anim.SetFloat("Running", Mathf.Abs(facedirection));
         }
 
         if (facedirection != 0) 
@@ -37,6 +39,7 @@ public class CharacterControl : MonoBehaviour
         
         }
 
+        //character jump
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
