@@ -1,4 +1,4 @@
-# My-own-project
-Sample project
+# Sunny Land
+Unity 2D Game
 
-This is the sample space for another project.
+This was my first Unity 2D Game completed totally by myself.
