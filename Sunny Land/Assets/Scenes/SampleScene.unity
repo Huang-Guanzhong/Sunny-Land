@@ -356,8 +356,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 359832602}
   anim: {fileID: 359832605}
+  coll: {fileID: 359832603}
   speed: 10
   jumpforce: 10
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &359832605
 Animator:
   serializedVersion: 4
@@ -434,6 +438,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -507,6 +512,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c0c555b1a08a84b965437a67ed58d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 359832601}
 --- !u!1 &1948667148
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +537,7 @@ GameObject:
   - component: {fileID: 1948667151}
   - component: {fileID: 1948667150}
   - component: {fileID: 1948667152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
