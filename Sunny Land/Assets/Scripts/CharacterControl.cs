@@ -6,8 +6,10 @@ public class CharacterControl : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
+    public Collider2D coll;
     public float speed;
     public float jumpforce;
+    public LayerMask ground;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class CharacterControl : MonoBehaviour
     void Update()
     {
         Movement();
+        SwitchAnim();
     }
 
     void Movement() 
@@ -43,12 +46,31 @@ public class CharacterControl : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-
+            anim.SetBool("Jumping", true);
         }
 
     
     }
 
+    void SwitchAnim() 
+    {
+        anim.SetBool("Idle", false);
+        if (anim.GetBool("Jumping"))
+        {
+            if (rb.velocity.y < 0)
+            {
+                anim.SetBool("Jumping", false);
+                anim.SetBool("Falling", true);
+            }
+        }
+
+        else if (coll.IsTouchingLayers(ground))
+        {
+            anim.SetBool("Falling", false);
+            anim.SetBool("Idle", true);
+        }
+    
+    }
 
 }
 
