@@ -10,6 +10,7 @@ public class CharacterControl : MonoBehaviour
     public float speed;
     public float jumpforce;
     public LayerMask ground;
+    public int Cherry;
 
     // Start is called before the first frame update
     void Start()
@@ -72,5 +73,13 @@ public class CharacterControl : MonoBehaviour
     
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Collection")
+        {
+            Destroy(collision.gameObject);
+            Cherry += 1;
+        }
+    }
 }
 
