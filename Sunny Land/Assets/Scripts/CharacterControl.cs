@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterControl : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CharacterControl : MonoBehaviour
     public float jumpforce;
     public LayerMask ground;
     public int Cherry;
+
+    public Text CherryNum;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,7 @@ public class CharacterControl : MonoBehaviour
     
     }
 
+    //Switch Animations
     void SwitchAnim() 
     {
         anim.SetBool("Idle", false);
@@ -75,12 +79,14 @@ public class CharacterControl : MonoBehaviour
     
     }
 
+    //Cherry Collections
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collection")
         {
             Destroy(collision.gameObject);
             Cherry += 1;
+            CherryNum.text = Cherry.ToString();
         }
     }
 }
