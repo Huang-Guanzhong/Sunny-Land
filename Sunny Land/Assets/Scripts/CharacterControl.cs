@@ -46,7 +46,7 @@ public class CharacterControl : MonoBehaviour
         }
 
         //character jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             anim.SetBool("Jumping", true);
