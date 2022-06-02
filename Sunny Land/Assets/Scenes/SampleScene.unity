@@ -2953,6 +2953,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
   m_PrefabInstance: {fileID: 813668152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1935404609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3626892988208285259, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+  m_PrefabInstance: {fileID: 3626892988567788124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1935404615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935404609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03632456, y: -0.59048444}
+  serializedVersion: 2
+  m_Radius: 0.32821745
 --- !u!1 &1948667148
 GameObject:
   m_ObjectHideFlags: 0
@@ -6536,6 +6557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3626892988208285248, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: coll
+      value: 
+      objectReference: {fileID: 1935404615}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6582,19 +6607,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285255, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Size.x
-      value: 0.7437472
+      value: 0.81728125
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285255, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Size.y
-      value: 0.9726964
+      value: 0.6102598
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285255, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: a50d91f0c2fafb64a950635e803466f6, type: 2}
+    - target: {fileID: 3626892988208285255, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Offset.x
-      value: -0.09341648
+      value: 0.025146484
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285255, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Offset.y
-      value: -0.4981163
+      value: -0.047659278
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285259, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Name
