@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Animator anim;
+    private Rigidbody2D rb;
+    private Animator anim;
+
     public Collider2D coll;
     public float speed;
     public float jumpforce;
@@ -15,7 +16,8 @@ public class CharacterControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
