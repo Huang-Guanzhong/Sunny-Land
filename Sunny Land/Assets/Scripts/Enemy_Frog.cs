@@ -8,13 +8,17 @@ public class Enemy_Frog : MonoBehaviour
 
     public Transform leftpoint, rightpoint;
     public float Speed;
+    private float leftx, rightx;
 
     private bool Faceleft = true;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         transform.DetachChildren();
-
+        leftx = leftpoint.position.x;
+        rightx = rightpoint.position.x;
+        Destroy(leftpoint.gameObject);
+        Destroy(rightpoint.gameObject);
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class Enemy_Frog : MonoBehaviour
         if (Faceleft)
         {
             rb.velocity = new Vector2(-Speed, rb.velocity.y);
-            if (transform.position.x < leftpoint.position.x)
+            if (transform.position.x < leftx)
             {
                 transform.localScale = new Vector3(-1,1,1);
                 Faceleft = false;
@@ -37,7 +41,7 @@ public class Enemy_Frog : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(Speed, rb.velocity.y);
-            if (transform.position.x > rightpoint.position.x)
+            if (transform.position.x > rightx)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 Faceleft = true;
