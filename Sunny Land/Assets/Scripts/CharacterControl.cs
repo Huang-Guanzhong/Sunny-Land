@@ -79,7 +79,7 @@ public class CharacterControl : MonoBehaviour
         {
             anim.SetBool("Hurt", true);
             anim.SetFloat("Running", 0);
-            if (Mathf.Abs(rb.velocity.x) < 0.3f) 
+            if (Mathf.Abs(rb.velocity.x) < 1f) 
             {
                 anim.SetBool("Hurt", false);
                 anim.SetBool("Idle", true);
