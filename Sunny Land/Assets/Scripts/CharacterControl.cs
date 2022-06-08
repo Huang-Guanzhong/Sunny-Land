@@ -15,6 +15,7 @@ public class CharacterControl : MonoBehaviour
     public int Cherry;
 
     public Text CherryNum;
+    private bool isHurt; // the default is false
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,10 @@ public class CharacterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (!isHurt)
+        {
+            Movement(); 
+        }
         SwitchAnim();
     }
 
@@ -71,6 +75,18 @@ public class CharacterControl : MonoBehaviour
             }
         }
 
+        else if (isHurt)
+        {
+            anim.SetBool("Hurt", true);
+            anim.SetFloat("Running", 0);
+            if (Mathf.Abs(rb.velocity.x) < 0.3f) 
+            {
+                anim.SetBool("Hurt", false);
+                anim.SetBool("Idle", true);
+                isHurt = false;
+            }
+        }
+
         else if (coll.IsTouchingLayers(ground))
         {
             anim.SetBool("Falling", false);
@@ -93,13 +109,23 @@ public class CharacterControl : MonoBehaviour
     //Elimate Enemies
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (anim.GetBool("Falling"))
+        if (collision.gameObject.tag == "Enemy")
         {
-            if (collision.gameObject.tag == "Enemy")
+            if (anim.GetBool("Falling"))
             {
                 Destroy(collision.gameObject);
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 anim.SetBool("Jumping", true);
+            }
+            else if (transform.position.x < collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(-8, rb.velocity.y);
+                isHurt = true;
+            }
+            else if (transform.position.x > collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(8, rb.velocity.y);
+                isHurt = true;
             }
         }
     }
