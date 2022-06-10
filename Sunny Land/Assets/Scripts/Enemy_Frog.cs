@@ -5,15 +5,23 @@ using UnityEngine;
 public class Enemy_Frog : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    public Transform leftpoint, rightpoint;
+    private Animator Anim;
+    private Collider2D Coll;
+    public LayerMask Ground;
+    public Transform leftpoint;
+    public Transform rightpoint;
     public float Speed;
-    private float leftx, rightx;
+    public float JumpForce;
+    private float leftx;
+    private float rightx;
 
     private bool Faceleft = true;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>();
+        Coll = GetComponent<Collider2D>();
+
         transform.DetachChildren();
         leftx = leftpoint.position.x;
         rightx = rightpoint.position.x;
@@ -24,24 +32,33 @@ public class Enemy_Frog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        SwitchAnim();
     }
 
     void Movement () 
     {
-        if (Faceleft)
+        if (Faceleft) //Face Left
         {
-            rb.velocity = new Vector2(-Speed, rb.velocity.y);
-            if (transform.position.x < leftx)
+            if (Coll.IsTouchingLayers(Ground))
+            {
+                Anim.SetBool("jumping", true);
+                rb.velocity = new Vector2(-Speed, JumpForce);
+            }
+            
+            if (transform.position.x < leftx) //Overpass left point turn around
             {
                 transform.localScale = new Vector3(-1,1,1);
                 Faceleft = false;
             }
         }
-        else
+        else //Face Right
         {
-            rb.velocity = new Vector2(Speed, rb.velocity.y);
-            if (transform.position.x > rightx)
+            if (Coll.IsTouchingLayers(Ground))
+            {
+                Anim.SetBool("jumping", true);
+                rb.velocity = new Vector2(Speed, JumpForce);
+            }
+            if (transform.position.x > rightx) //Overpass right point turn around
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 Faceleft = true;
@@ -49,5 +66,22 @@ public class Enemy_Frog : MonoBehaviour
                 
         }
     
+    }
+
+    void SwitchAnim()
+    {
+        if (Anim.GetBool("jumping"))
+        {
+            if (rb.velocity.y < 0.1)
+            {
+                Anim.SetBool("jumping", false);
+                Anim.SetBool("falling", true);
+            }
+        }
+        if (Coll.IsTouchingLayers(Ground) && Anim.GetBool("falling"))
+        {
+            Anim.SetBool("falling", false);
+        }
+
     }
 }

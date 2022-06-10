@@ -66,6 +66,12 @@ public class CharacterControl : MonoBehaviour
     void SwitchAnim() 
     {
         anim.SetBool("Idle", false);
+
+        if (rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
+        {
+            anim. SetBool("Falling", true) ;
+        }
+
         if (anim.GetBool("Jumping"))
         {
             if (rb.velocity.y < 0)

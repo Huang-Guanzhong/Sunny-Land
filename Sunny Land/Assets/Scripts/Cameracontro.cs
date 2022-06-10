@@ -9,6 +9,6 @@ public class Cameracontro : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(player.position.x, 0, -10f);
+        transform.position = new Vector3(player.position.x, player.position.y, -10f);
     }
 }
