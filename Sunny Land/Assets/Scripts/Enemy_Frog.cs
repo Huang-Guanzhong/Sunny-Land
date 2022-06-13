@@ -82,6 +82,16 @@ public class Enemy_Frog : MonoBehaviour
         {
             Anim.SetBool("falling", false);
         }
-
     }
+
+    void Death()
+    {
+        Anim.SetTrigger("death");
+    }
+
+    public void JumpOn()
+    {
+        Destroy(gameObject);
+    }
+
 }
