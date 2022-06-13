@@ -1166,7 +1166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.679999, y: 2.1722207, z: -10}
+  m_LocalPosition: {x: 10.359999, y: 2.2422206, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1576,7 +1576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916082278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32, y: -0.58, z: 0}
+  m_LocalPosition: {x: -1.75, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1647,7 +1647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924882936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.679999, y: 2.1722207, z: -10}
+  m_LocalPosition: {x: 10.359999, y: 2.2422206, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2409,7 +2409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303641699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.85, y: -0.63, z: 0}
+  m_LocalPosition: {x: 2.78, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3168,7 +3168,7 @@ GameObject:
   - component: {fileID: 1663318365}
   m_Layer: 0
   m_Name: Eagle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3314,8 +3314,6 @@ MonoBehaviour:
   top: {fileID: 1870811122}
   bottom: {fileID: 835090212}
   Speed: 1
-  TopY: 0
-  BottomY: 0
 --- !u!1 &1677007669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7437,11 +7435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.68
+      value: 10.36
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.05
+      value: 2.12
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.z
