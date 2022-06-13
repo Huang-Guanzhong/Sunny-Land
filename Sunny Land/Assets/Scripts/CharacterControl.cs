@@ -117,10 +117,10 @@ public class CharacterControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Enemy_Frog frog = collision.gameObject.GetComponent<Enemy_Frog>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (anim.GetBool("Falling"))
             {
-                frog.JumpOn();
+                enemy.JumpOn();
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 anim.SetBool("Jumping", true);
             }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Eagle : MonoBehaviour
+public class Enemy_Eagle : Enemy
 {
 
     private Rigidbody2D rb;
-    private Collider2D coll;
+    //private Collider2D coll;
     public Transform top;
     public Transform bottom;
     public float Speed;
@@ -15,10 +15,11 @@ public class Enemy_Eagle : MonoBehaviour
 
     private bool isUp;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<Collider2D>();
+        //coll = GetComponent<Collider2D>();
         TopY = top.position.y;
         BottomY = bottom.position.y;
         Destroy(top.gameObject);
