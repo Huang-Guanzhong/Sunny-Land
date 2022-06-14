@@ -9,6 +9,8 @@ public class CharacterControl : MonoBehaviour
     private Animator anim;
     public Collider2D coll;
     public AudioSource JumpAudio;
+    public AudioSource HurtAudio;
+    public AudioSource CherryAudio;
 
     public float speed;
     public float JumpForce;
@@ -127,14 +129,17 @@ public class CharacterControl : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 anim.SetBool("Jumping", true);
             }
+            //Hurt
             else if (transform.position.x < collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(-8, rb.velocity.y);
+                HurtAudio.Play();
                 isHurt = true;
             }
             else if (transform.position.x > collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(8, rb.velocity.y);
+                HurtAudio.Play();
                 isHurt = true;
             }
         }
