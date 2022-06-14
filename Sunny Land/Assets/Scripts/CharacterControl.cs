@@ -8,9 +8,11 @@ public class CharacterControl : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     public Collider2D coll;
+    public Collider2D DisColl;
     public AudioSource JumpAudio;
     public AudioSource HurtAudio;
     public AudioSource CherryAudio;
+    public Transform CeilingCheck;
 
     public float speed;
     public float JumpForce;
@@ -64,6 +66,7 @@ public class CharacterControl : MonoBehaviour
             anim.SetBool("Jumping", true);
         }
 
+        Crouch();
     
     }
 
@@ -144,6 +147,25 @@ public class CharacterControl : MonoBehaviour
                 isHurt = true;
             }
         }
+    }
+
+    void Crouch()
+    {
+        if (!Physics2D.OverlapCircle(CeilingCheck.position, 0.2f, ground))
+        {
+            if (Input.GetButton("Crouch"))
+            {
+                anim.SetBool("Crouching", true);
+                DisColl.enabled = false;
+            }
+
+            else
+            {
+                anim.SetBool("Crouching", false);
+                DisColl.enabled = true;
+            }
+        }
+        
     }
 }
 
