@@ -7,10 +7,12 @@ public class CharacterControl : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
-
     public Collider2D coll;
+    public AudioSource JumpAudio;
+
     public float speed;
-    public float jumpforce;
+    public float JumpForce;
+
     public LayerMask ground;
     public int Cherry;
 
@@ -34,15 +36,15 @@ public class CharacterControl : MonoBehaviour
         SwitchAnim();
     }
 
-    void Movement() 
+    void Movement() //Movement
     {
-        float horizontalmove = Input.GetAxis("Horizontal");
+        float HorizontalMove = Input.GetAxis("Horizontal");
         float facedirection = Input.GetAxisRaw("Horizontal");
 
         //chareacter movement
-        if (horizontalmove != 0)
+        if (HorizontalMove != 0)
         {
-            rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+            rb.velocity = new Vector2(HorizontalMove * speed, rb.velocity.y);
             anim.SetFloat("Running", Mathf.Abs(facedirection));
         }
 
@@ -55,7 +57,8 @@ public class CharacterControl : MonoBehaviour
         //character jump
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+            JumpAudio.Play();
             anim.SetBool("Jumping", true);
         }
 
@@ -121,7 +124,7 @@ public class CharacterControl : MonoBehaviour
             if (anim.GetBool("Falling"))
             {
                 enemy.JumpOn();
-                rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+                rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 anim.SetBool("Jumping", true);
             }
             else if (transform.position.x < collision.gameObject.transform.position.x)
