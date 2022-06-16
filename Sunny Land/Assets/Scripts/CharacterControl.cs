@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterControl : MonoBehaviour
 {
@@ -109,15 +110,22 @@ public class CharacterControl : MonoBehaviour
     
     }
 
-    //Cherry Collections
+    //Collider Trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Cherry Collections
         if (collision.tag == "Collection")
         {
             CherryAudio.Play();
             Destroy(collision.gameObject);
             Cherry += 1;
             CherryNum.text = Cherry.ToString();
+        }
+
+        if (collision.tag == "DeadLine")
+        {
+            GetComponent<AudioSource>().enabled = false;
+            Invoke("Restart", 2f);
         }
     }
 
@@ -166,6 +174,11 @@ public class CharacterControl : MonoBehaviour
             }
         }
         
+    }
+
+    void Restart()
+    {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
