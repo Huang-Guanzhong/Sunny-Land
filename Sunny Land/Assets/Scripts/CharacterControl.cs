@@ -44,6 +44,7 @@ public class CharacterControl : MonoBehaviour
             Movement(); 
         }
         SwitchAnim();
+        CherryNum.text = Cherry.ToString();
     }
 
     void Movement() //Movement
@@ -122,9 +123,10 @@ public class CharacterControl : MonoBehaviour
         if (collision.tag == "Cherry")
         {
             CherryAudio.Play();
-            Destroy(collision.gameObject);
-            Cherry += 1;
-            CherryNum.text = Cherry.ToString();
+            //Destroy(collision.gameObject);
+            //Cherry += 1;
+            collision.GetComponent<Animation>().Play("IsGot");
+            //CherryNum.text = Cherry.ToString();
         }
 
         //Gem Collections
@@ -193,6 +195,11 @@ public class CharacterControl : MonoBehaviour
     void Restart()
     {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void CherryCount()
+    {
+        Cherry = +1;
     }
 }
 
