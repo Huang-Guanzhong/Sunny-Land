@@ -13,15 +13,20 @@ public class CharacterControl : MonoBehaviour
     public AudioSource JumpAudio;
     public AudioSource HurtAudio;
     public AudioSource CherryAudio;
+    public AudioSource GemAudio;
     public Transform CeilingCheck;
+    public LayerMask ground;
 
     public float speed;
     public float JumpForce;
 
-    public LayerMask ground;
+  
     public int Cherry;
+    public int Gem;
 
     public Text CherryNum;
+    public Text GemNum;
+
     private bool isHurt; // the default is false
 
     // Start is called before the first frame update
@@ -114,12 +119,21 @@ public class CharacterControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Cherry Collections
-        if (collision.tag == "Collection")
+        if (collision.tag == "Cherry")
         {
             CherryAudio.Play();
             Destroy(collision.gameObject);
             Cherry += 1;
             CherryNum.text = Cherry.ToString();
+        }
+
+        //Gem Collections
+        if (collision.tag == "Gem")
+        {
+            GemAudio.Play();
+            Destroy(collision.gameObject);
+            Gem += 1;
+            GemNum.text = Gem.ToString();
         }
 
         if (collision.tag == "DeadLine")

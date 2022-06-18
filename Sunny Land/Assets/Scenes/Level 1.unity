@@ -475,6 +475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
+      objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -722,11 +726,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &359832601 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
-  m_PrefabInstance: {fileID: 3626892988567788124}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &416729651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,12 +1206,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51695, y: 1.4602056, z: -10}
+  m_LocalPosition: {x: 16.66, y: 1.1922208, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -1226,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c0c555b1a08a84b965437a67ed58d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 359832601}
+  player: {fileID: 1993111162}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,6 +1270,10 @@ PrefabInstance:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
       value: Cherry (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
@@ -1574,6 +1577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
+      objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1657,7 +1664,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 359832601}
+  m_Follow: {fileID: 1993111162}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 6
@@ -1667,7 +1674,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7780126, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1684,13 +1691,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924882936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5200005, y: 4.1022205, z: -10}
+  m_LocalPosition: {x: 16.66, y: 1.1922208, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386576785}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &924882939
 MonoBehaviour:
@@ -1856,6 +1863,10 @@ PrefabInstance:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
       value: Cherry (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
@@ -2522,6 +2533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
+      objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2666,6 +2681,10 @@ PrefabInstance:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
       value: Cherry (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
@@ -3269,7 +3288,7 @@ Transform:
   - {fileID: 68995300}
   - {fileID: 1182539597}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1701723372 stripped
 Transform:
@@ -3286,6 +3305,10 @@ PrefabInstance:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
       value: Cherry (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_RootOrder
@@ -7279,6 +7302,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!4 &1993111162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+  m_PrefabInstance: {fileID: 3626892988567788124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2026435341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7289,6 +7317,10 @@ PrefabInstance:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
       value: Cherry (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
+      value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288228, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_SortingLayer
@@ -7559,9 +7591,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574861891884380460, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: GemNum
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574861891884380460, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: CherryNum
+      value: 
+      objectReference: {fileID: 756613691}
     - target: {fileID: 3519143992095660913, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626892988208285248, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: GemAudio
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285248, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: CherryNum
@@ -7573,11 +7625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.52
+      value: 16.49
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.98
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 3626892988208285253, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7630,6 +7682,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
       propertyPath: m_Name
+      value: Cherry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147475095515288218, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
+      propertyPath: m_TagString
       value: Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 7147475095515288231, guid: 98a7da7fdeb69b042a9d0beaef265fec, type: 3}
