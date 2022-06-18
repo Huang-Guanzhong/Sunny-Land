@@ -122,6 +122,7 @@ public class CharacterControl : MonoBehaviour
         if (collision.tag == "Cherry")
         {
             CherryAudio.Play();
+            collision.GetComponent<Animator>().Play("CollectedFX");
             Destroy(collision.gameObject);
             Cherry += 1;
             CherryNum.text = Cherry.ToString();
