@@ -37,13 +37,19 @@ public class CharacterControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!isHurt)
         {
             Movement(); 
         }
         SwitchAnim();
+    }
+
+    private void Update()
+    {
+        Jump();
+        Crouch();
     }
 
     void Movement() //Movement
@@ -63,17 +69,17 @@ public class CharacterControl : MonoBehaviour
             transform.localScale = new Vector3(facedirection, 1, 1);
         
         }
+    }
 
-        //character jump
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+    //Character Jump
+    void Jump()
+    {
+        if (Input.GetButton("Jump") && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
             JumpAudio.Play();
             anim.SetBool("Jumping", true);
         }
-
-        Crouch();
-    
     }
 
     //Switch Animations
