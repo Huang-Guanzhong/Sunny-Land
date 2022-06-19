@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
+        GetComponent<Animator>().enabled = false;
         Destroy(gameObject);
     }
 
