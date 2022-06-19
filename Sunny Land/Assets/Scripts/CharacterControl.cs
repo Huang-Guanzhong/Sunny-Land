@@ -149,7 +149,7 @@ public class CharacterControl : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            if (anim.GetBool("Falling"))
+            if (anim.GetBool("Falling") && transform.position.y > (collision.gameObject.transform.position.y + 0.5f))
             {
                 enemy.JumpOn();
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
