@@ -16,6 +16,7 @@ public class CharacterControl : MonoBehaviour
     public AudioSource GemAudio;
     public Transform CeilingCheck;
     public LayerMask ground;
+    public Joystick joystick;
 
     public float speed;
     public float JumpForce;
@@ -46,9 +47,9 @@ public class CharacterControl : MonoBehaviour
         SwitchAnim();
     }
 
-    void Movement() //Movement
+    /*void Movement() //Movement on PC
     {
-        float HorizontalMove = Input.GetAxis("Horizontal");
+        float HorizontalMove = Input.GetAxis("Horizontal"); PC Control
         float facedirection = Input.GetAxisRaw("Horizontal");
 
         //chareacter movement
@@ -62,10 +63,42 @@ public class CharacterControl : MonoBehaviour
         {
             transform.localScale = new Vector3(facedirection, 1, 1);
         
+        }*/
+
+     void Movement() //Movement on Mobile
+    {
+        float HorizontalMove = joystick.Horizontal;//-1f~1f
+        float facedirection = joystick.Horizontal;
+
+        //chareacter movement
+        if (HorizontalMove != 0f)
+        {
+            rb.velocity = new Vector2(HorizontalMove * speed, rb.velocity.y);
+            anim.SetFloat("Running", Mathf.Abs(facedirection));
         }
 
-        //character jump
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        if (facedirection > 0f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+
+        }
+        if (facedirection < 0f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+
+        }
+
+
+        //character jump on PC
+        /*if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+            JumpAudio.Play();
+            anim.SetBool("Jumping", true);
+        }*/
+
+        //character jump on Mobile
+        if (joystick.Vertical > 0.5f && coll.IsTouchingLayers(ground))//-1f~1f
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
             JumpAudio.Play();
@@ -171,7 +204,8 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
-    void Crouch()
+    //Crouch on PC
+    /*void Crouch()
     {
         if (!Physics2D.OverlapCircle(CeilingCheck.position, 0.2f, ground))
         {
@@ -188,6 +222,26 @@ public class CharacterControl : MonoBehaviour
             }
         }
         
+    }*/
+
+    //Crouch on Mobile
+    void Crouch()
+    {
+        if (!Physics2D.OverlapCircle(CeilingCheck.position, 0.2f, ground))
+        {
+            if (joystick.Vertical < -0.5f)
+            {
+                anim.SetBool("Crouching", true);
+                DisColl.enabled = false;
+            }
+
+            else
+            {
+                anim.SetBool("Crouching", false);
+                DisColl.enabled = true;
+            }
+        }
+
     }
 
     void Restart()
