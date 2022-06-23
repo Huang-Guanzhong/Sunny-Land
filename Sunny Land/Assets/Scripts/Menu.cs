@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject PauseMenu;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -18,5 +20,14 @@ public class Menu : MonoBehaviour
     public void UIEnable()
     {
         GameObject.Find("Canvas/MainMenu/UI").SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+       PauseMenu.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        PauseMenu.SetActive(false);
     }
 }
