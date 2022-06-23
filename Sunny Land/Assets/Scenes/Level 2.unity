@@ -478,8 +478,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 112.3, y: -66.4}
-  m_SizeDelta: {x: 37.06067, y: 30}
+  m_AnchoredPosition: {x: 209.52496, y: -63.03601}
+  m_SizeDelta: {x: 37.9106, y: 78.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115746309
 MonoBehaviour:
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9575472, b: 0.9575472, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -502,12 +502,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 68
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -604,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131694647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0699997, y: 3.27, z: -10}
+  m_LocalPosition: {x: -7.37, y: 3.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -647,8 +647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.4, y: -63.7}
-  m_SizeDelta: {x: 86.26398, y: 30}
+  m_AnchoredPosition: {x: 100.18689, y: -63.0365}
+  m_SizeDelta: {x: 161.0571, y: 78.8704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164560728
 MonoBehaviour:
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.7344836, b: 0.6745283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -671,12 +671,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 84
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7077,7 +7077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.14
+      value: -7.44
       objectReference: {fileID: 0}
     - target: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8451,7 +8451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1795462364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8531,7 +8531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2100208578
 RectTransform:
   m_ObjectHideFlags: 0
