@@ -143,7 +143,7 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
-    //Elimate Enemies
+    //Elimate Targets
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
