@@ -1582,7 +1582,7 @@ GameObject:
   - component: {fileID: 556287620}
   - component: {fileID: 556287621}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,13 +1655,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1584985969}
   m_HandleRect: {fileID: 1904114122}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 754252466}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: SetVolumn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &663545021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1843,6 +1855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 177650158}
+  AudioMixer: {fileID: 24100000, guid: c64de53723171ac4ca4b2ab8b8a59027, type: 2}
 --- !u!1 &756613689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,8 +8814,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2393788665352956957, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2393788665352956957, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: c64de53723171ac4ca4b2ab8b8a59027, type: 2}
     - target: {fileID: 2574861891884380457, guid: 350dd0ddac738b34f830ba360828f857, type: 3}
       propertyPath: m_RootOrder
       value: 4
