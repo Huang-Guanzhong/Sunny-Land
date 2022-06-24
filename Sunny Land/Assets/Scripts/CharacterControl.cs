@@ -10,10 +10,10 @@ public class CharacterControl : MonoBehaviour
     private Animator anim;
     public Collider2D coll;
     public Collider2D DisColl;
-    public AudioSource JumpAudio;
+    /*public AudioSource JumpAudio;
     public AudioSource HurtAudio;
     public AudioSource CherryAudio;
-    public AudioSource GemAudio;
+    public AudioSource GemAudio;*/
     public Transform CeilingCheck;
     public Transform GroundCheck;
     public LayerMask ground;
@@ -125,13 +125,15 @@ public class CharacterControl : MonoBehaviour
         {
             rb.velocity = Vector2.up * JumpForce;// Vector2.up = new Vector2 (0,1)
             extraJump--;
-            JumpAudio.Play();
+            //JumpAudio.Play();
+            SoundManager.instance.JumpAudio();
             anim.SetBool("Jumping", true);
         }
         if (Input.GetButtonDown("Jump") && extraJump == 0 && isGround)
         {
             rb.velocity = Vector2.up * JumpForce;
-            JumpAudio.Play();
+            //JumpAudio.Play();
+            SoundManager.instance.JumpAudio();
             anim.SetBool("Jumping", true);
         }
     }
@@ -181,7 +183,8 @@ private void OnTriggerEnter2D(Collider2D collision)
     //Cherry Collections
     if (collision.tag == "Cherry")
     {
-        CherryAudio.Play();
+        //CherryAudio.Play();
+        SoundManager.instance.CherryAudio();
         Destroy(collision.gameObject);
         Cherry += 1;
         CherryNum.text = Cherry.ToString();
@@ -190,7 +193,8 @@ private void OnTriggerEnter2D(Collider2D collision)
     //Gem Collections
     if (collision.tag == "Gem")
     {
-        GemAudio.Play();
+        //GemAudio.Play();
+        SoundManager.instance.GemAudio();
         Destroy(collision.gameObject);
         Gem += 1;
         GemNum.text = Gem.ToString();
@@ -219,13 +223,15 @@ private void OnCollisionEnter2D(Collision2D collision)
         else if (transform.position.x < collision.gameObject.transform.position.x)
         {
             rb.velocity = new Vector2(-8, rb.velocity.y);
-            HurtAudio.Play();
+            //HurtAudio.Play();
+            SoundManager.instance.HurtAudio();
             isHurt = true;
         }
         else if (transform.position.x > collision.gameObject.transform.position.x)
         {
             rb.velocity = new Vector2(8, rb.velocity.y);
-            HurtAudio.Play();
+            //HurtAudio.Play();
+            SoundManager.instance.HurtAudio();
             isHurt = true;
         }
     }
