@@ -15,6 +15,7 @@ public class CharacterControl : MonoBehaviour
     public AudioSource CherryAudio;
     public AudioSource GemAudio;
     public Transform CeilingCheck;
+    public Transform GroundCheck;
     public LayerMask ground;
     public Joystick joystick;
 
@@ -24,11 +25,13 @@ public class CharacterControl : MonoBehaviour
   
     public int Cherry;
     public int Gem;
+    private int extraJump;
 
     public Text CherryNum;
     public Text GemNum;
 
     private bool isHurt; // the default is false
+    private bool isGround;// the default is false
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,7 @@ public class CharacterControl : MonoBehaviour
             Movement(); 
         }
         SwitchAnim();
+        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, ground);
     }
 
     void Movement() //Movement on PC
@@ -90,12 +94,12 @@ public class CharacterControl : MonoBehaviour
 
 
         //character jump on PC
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        /*if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
             JumpAudio.Play();
             anim.SetBool("Jumping", true);
-        }
+        }*/
 
         //character jump on Mobile
         /*if (joystick.Vertical > 0.5f && coll.IsTouchingLayers(ground))//-1f~1f
@@ -107,7 +111,30 @@ public class CharacterControl : MonoBehaviour
 
         Crouch();
 
+        newJump();
+
 }
+    //Doubel Jump or Multiple Jumps
+    void newJump()
+    {
+        if (isGround)
+        {
+            extraJump = 1;
+        }
+        if (Input.GetButtonDown("Jump") && extraJump > 0)
+        {
+            rb.velocity = Vector2.up * JumpForce;// Vector2.up = new Vector2 (0,1)
+            extraJump--;
+            JumpAudio.Play();
+            anim.SetBool("Jumping", true);
+        }
+        if (Input.GetButtonDown("Jump") && extraJump == 0 && isGround)
+        {
+            rb.velocity = Vector2.up * JumpForce;
+            JumpAudio.Play();
+            anim.SetBool("Jumping", true);
+        }
+    }
 
 //Switch Animations
 void SwitchAnim() 
