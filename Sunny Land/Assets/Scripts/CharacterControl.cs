@@ -278,8 +278,8 @@ void Crouch()
     }*/
 
     void Restart()
-{
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-}
+    }
 }
 
